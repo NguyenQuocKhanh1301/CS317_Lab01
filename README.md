@@ -105,10 +105,10 @@ Dự án được xây dựng trên nền tảng Python với hệ sinh thái th
 - Linux :
 ```sh
 $ sudo apt-get update
-$ sudo apt-get install python3.10 python3.10-venv
+$ sudo apt-get install python3.10 python3.10-virtualenv
 ```
 
-- Nếu không cài được python 3.10 bạn có thể thử ([Link sau](https://stackoverflow.com/questions/75131112/how-to-install-python3-10-virtual-environment-when-python3-10-venv-has-no-instal))
+  - Nếu không cài được python 3.10 bạn có thể thử ([Link sau](https://stackoverflow.com/questions/75131112/how-to-install-python3-10-virtual-environment-when-python3-10-venv-has-no-instal))
 - Window: có thể tải về máy ([tại đây](https://www.python.org/downloads/))
 2. **Clone git**
 - Đảm bảo đã tải git về máy ([tải tại đây](https://git-scm.com/downloads))
