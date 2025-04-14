@@ -49,12 +49,66 @@ Dự án được xây dựng trên nền tảng Python với hệ sinh thái th
 * **Nguồn dữ liệu:** Kaggle
 * **Quản lý phiên bản:** Git
 ## Hướng dẫn chạy mlflow và pipeline training
-1. Install python 3.10
-2. Clone git
-3. Tạo môi trường ảo
-4. Cài đặt thư viện
-5. Mở giao diện mlflow
-6. run pipeline
-7. Load model và đánh giá
+1. **Install python 3.10**
+- Linux :
+```sh
+$ sudo apt-get update
+$ sudo apt-get install python3.10 python3.10-venv
+```
+- Window: có thể tải về máy ([tại đây](https://www.python.org/downloads/))
+2. **Clone git**
+- Đảm bảo đã tải git về máy ([tải tại đây](https://git-scm.com/downloads))
+- Mở Folder để lưu dữ liệu được tải về, sau đó khởi tạo git
+```sh
+git init
+```
+- Clone code về:
+```sh
+git clone git@github.com:NguyenQuocKhanh1301/CS317_Lab01.git
+```
+3. **Tạo môi trường ảo (venv or conda ...)**
+- Chuyển qua file đã clone về
+```sh
+cd your_path/CS317_Lab01
+```
+- Mở terminal và khởi tạo môi trường ảo với venv:
+  ```sh
+  python -m venv venv
+  ```
+- Activate môi trường ảo
+  - Linux
+  ```sh
+  source venv/bin/activate
+  ```
+  - Window
+ ```sh
+.\venv\Scripts\activate
+ ```
+4. **Cài đặt thư viện**
+
+Cài đặt các thư viện cần thiết:
+```sh
+pip install -r requirements.txt
+```
+5. **Mở giao diện mlflow**
+
+Sử dụng lệnh sau để ui của mlflow với
+- host: 0.0.0.0 
+- port: 5003
+```sh
+mlflow ui --host 0.0.0.0 --port 5003
+```
+6. **Run pipeline**
+
+Để chạy pipelin training sử dụng câu lệnh sau:
+```sh
+python lab01.py
+```
+7. **Load model và đánh giá**
+
+Sau khi chon được model tốt nhất thì tiến hành đánh giá:
+```ssh
+python Evaluation.py
+```
 ## Video demo:
 
