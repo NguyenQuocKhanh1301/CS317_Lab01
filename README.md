@@ -49,6 +49,13 @@
 # CS317 : Phát triển và vận hành hệ thống máy học
 # Thực hành Lab01
 
+# COURSE INTRODUCTION
+* **Course Name:** MLOps - Phát triển và vận hành hệ thống máy học.
+* **Course Code:** CS317.
+* **Class Code:** CS317.P21.
+* **Academic Year:** HK2 (2024 - 2025).
+* **Lecturer**: Th.S Đỗ Văn Tiến, Lê Trần Trọng Khiêm
+
 ## Training Pipeline 
 Pipeline được chia thành 4 phần: 
 - Data Preprocessing
@@ -60,10 +67,10 @@ Data sau khi được xử lý sẽ đưa qua bước training, sử dụng hype
 1. **Data Preprocessing**
 - Data được lấy từ [kaggle](https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset?)
 - Khử nhiễu bằng thuật toán Gaussian
-- Resize về cùng 1 kích thước : (224,224)
+- Resize về cùng 1 kích thước :(224,224)
 - Sử dụng Standard Scaler để chuẩn hóa dữ liệu
 - Convert từ numpy sang tensor để tương thích với framework Pytorch
-- Sử dụng Dataloader của pytorch với batchsize = 16
+- Sử dụng Dataloader của pytorch với batchsize = 16, để tận dụng việc xử lý đa luồng của GPU (Nếu có)
 - Chia data thành 3 tập:
   - Train : 70% 
   - Validation: 20%
@@ -73,14 +80,14 @@ Data sau khi được xử lý sẽ đưa qua bước training, sử dụng hype
 - Các hyperparameter trong quá trình train:
   - optimizer: Adam
   - loss_function : Cross_Entropy
-  - learning_rate : [0.001; 0.01; 0.1]
-  - num_epochs : 10
+  - tuing learning_rate : [0.001; 0.01; 0.1 ]
+  - epochs : 10
 - Điểm mới:
-Các metrics và hyperparameters sau khi training sẽ được lưu trên MLflow, thay vì log ra màn hình. Sử dụng MLflow để lưu trữ và quản lý các checkpoint.
+Các metrics và hyperparameters sau khi training sẽ được lưu trên mlflow, thay vì log ra màn hình. Sử dụng mlflow để lưu trữ và quản lý  các checkpoint.
 3. **Validation**
 - Sau khi model được training qua mỗi epochs, sẽ được đánh giá bằng tập validation
 - Thông qua loss và accuracy của bước này sẽ đánh giá được việc tuning có hiệu quá không, từ đó đưa ra các điều chỉnh phù hợp.
-- Các metrics và loss của bươc này cũng được log lại trên MLflow
+- Các metrics và loss của bươc này cũng được log lại trên mlflow
 4. **Evaluation**
 - Sau khi đã lựa chọn được các hyperparameters và model cho được kết quả tốt nhất thì tiến hành đánh giá khả năng ứng dụng thực tế của model thông qua tập Evaluation
 - Nếu đạt kết quả đặt ra thì tiến hành deploy, còn không thì tiếp tục quay trở lại bước data preprocessing tiếp tục đi thử nghiệm và đánh giá phương pháp khác.
@@ -96,13 +103,67 @@ Dự án được xây dựng trên nền tảng Python với hệ sinh thái th
     * Pillow, OpenCV
 * **Nguồn dữ liệu:** Kaggle
 * **Quản lý phiên bản:** Git
-## Hướng dẫn chạy MLflow và pipeline training
-1. Install python 3.10
-2. Clone git
-3. Tạo môi trường ảo
-4. Cài đặt thư viện
-5. Mở giao diện MLflow
-6. run pipeline
-7. Load model và đánh giá
+## Hướng dẫn chạy mlflow và pipeline training
+1. **Install python 3.10**
+- Linux :
+```sh
+$ sudo apt-get update
+$ sudo apt-get install python3.10 python3.10-venv
+```
+- Window: có thể tải về máy ([tại đây](https://www.python.org/downloads/))
+2. **Clone git**
+- Đảm bảo đã tải git về máy ([tải tại đây](https://git-scm.com/downloads))
+- Mở Folder để lưu dữ liệu được tải về, sau đó khởi tạo git
+```sh
+git init
+```
+- Clone code về:
+```sh
+git clone git@github.com:NguyenQuocKhanh1301/CS317_Lab01.git
+```
+3. **Tạo môi trường ảo (venv or conda ...)**
+- Chuyển qua file đã clone về
+```sh
+cd your_path/CS317_Lab01
+```
+- Mở terminal và khởi tạo môi trường ảo với venv:
+  ```sh
+  python -m venv venv
+  ```
+- Activate môi trường ảo
+  - Linux
+  ```sh
+  source venv/bin/activate
+  ```
+  - Window
+ ```sh
+.\venv\Scripts\activate
+ ```
+4. **Cài đặt thư viện**
+
+Cài đặt các thư viện cần thiết:
+```sh
+pip install -r requirements.txt
+```
+5. **Mở giao diện mlflow**
+
+Sử dụng lệnh sau để ui của mlflow với
+- host: 0.0.0.0 
+- port: 5003
+```sh
+mlflow ui --host 0.0.0.0 --port 5003
+```
+6. **Run pipeline**
+
+Để chạy pipelin training sử dụng câu lệnh sau:
+```sh
+python lab01.py
+```
+7. **Load model và đánh giá**
+
+Sau khi chon được model tốt nhất thì tiến hành đánh giá:
+```ssh
+python Evaluation.py
+```
 ## Video demo:
 
