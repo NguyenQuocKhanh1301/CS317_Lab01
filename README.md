@@ -37,6 +37,15 @@ Các metrics và hyperparameters sau khi training sẽ được lưu trên mlflo
 - Sau khi đã lựa chọn được các hyperparameters và model cho được kết quả tốt nhất thì tiến hành đánh giá khả năng ứng dụng thực tế của model thông qua tập Evaluation
 - Nếu đạt kết quả đặt ra thì tiến hành deploy, còn không thì tiếp tục quay trở lại bước data preprocessing tiếp tục đi thử nghiệm và đánh giá phương pháp khác.
 ## Framework và Công nghệ sử dụng:
+* **Ngôn ngữ lập trình:** Python
+* **Thư viện Deep Learning:** PyTorch (cho mô hình CNN, Dataloader, optimizer, loss function)
+* **Experiment Tracking:** MLflow (để log tham số, metrics, quản lý checkpoints và kết quả thử nghiệm)
+* **Xử lý dữ liệu:**
+    * NumPy
+    * Scikit-learn
+    * Pillow
+* **Nguồn dữ liệu:** Kaggle
+* **Quản lý phiên bản:** Git
 ## Hướng dẫn chạy mlflow và pipeline training
 1. Install python 3.10
 2. Clone git
