@@ -1,5 +1,11 @@
 # CS317 : Phát triển và vận hành hệ thống máy học
 # Thực hành Lab01
+|Thành Viên       |MSSV    |
+|-----------------|--------|
+|Nguyễn Quốc Khánh|22520646|
+|Nguyễn Thế Vĩnh  |2252|
+|Nguyễn Xuân Linh |2252|
+|Lưu Khánh Vinh   |2252|
 
 ## Training Pipeline 
 Pipeline được chia thành 4 phần: 
