@@ -37,4 +37,13 @@ Các metrics và hyperparameters sau khi training sẽ được lưu trên mlflo
 - Sau khi đã lựa chọn được các hyperparameters và model cho được kết quả tốt nhất thì tiến hành đánh giá khả năng ứng dụng thực tế của model thông qua tập Evaluation
 - Nếu đạt kết quả đặt ra thì tiến hành deploy, còn không thì tiếp tục quay trở lại bước data preprocessing tiếp tục đi thử nghiệm và đánh giá phương pháp khác.
 ## Framework và Công nghệ sử dụng:
+## Hướng dẫn chạy mlflow và pipeline training
+1. Install python 3.10
+2. Clone git
+3. Tạo môi trường ảo
+4. Cài đặt thư viện
+5. Mở giao diện mlflow
+6. run pipeline
+7. Load model và đánh giá
+## Video demo:
 
