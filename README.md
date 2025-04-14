@@ -37,13 +37,15 @@ Các metrics và hyperparameters sau khi training sẽ được lưu trên mlflo
 - Sau khi đã lựa chọn được các hyperparameters và model cho được kết quả tốt nhất thì tiến hành đánh giá khả năng ứng dụng thực tế của model thông qua tập Evaluation
 - Nếu đạt kết quả đặt ra thì tiến hành deploy, còn không thì tiếp tục quay trở lại bước data preprocessing tiếp tục đi thử nghiệm và đánh giá phương pháp khác.
 ## Framework và Công nghệ sử dụng:
+Dự án được xây dựng trên nền tảng Python với hệ sinh thái thư viện phong phú. PyTorch được chọn làm framework deep learning chính nhờ sự linh hoạt, khả năng tính toán GPU và Dataloader hiệu quả cho mô hình CNN. MLflow đóng vai trò then chốt trong việc theo dõi, quản lý thử nghiệm và mô hình, đảm bảo tính tái lập. Các thư viện như NumPy, Scikit-learn (cho StandardScaler), Scipy, Pillow và OpenCV hỗ trợ đắc lực cho việc xử lý dữ liệu số và ảnh (resize, khử nhiễu). Dữ liệu được lấy từ Kaggle và mã nguồn được quản lý bằng Git. Chi tiết được thể hiện dưới đây:
 * **Ngôn ngữ lập trình:** Python
 * **Thư viện Deep Learning:** PyTorch (cho mô hình CNN, Dataloader, optimizer, loss function)
 * **Experiment Tracking:** MLflow (để log tham số, metrics, quản lý checkpoints và kết quả thử nghiệm)
 * **Xử lý dữ liệu:**
     * NumPy
     * Scikit-learn
-    * Pillow
+    * Scipy
+    * Pillow, OpenCV
 * **Nguồn dữ liệu:** Kaggle
 * **Quản lý phiên bản:** Git
 ## Hướng dẫn chạy mlflow và pipeline training
