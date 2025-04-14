@@ -46,15 +46,12 @@
   </table>
 </div>
 
-# CS317 : Phát triển và vận hành hệ thống máy học
-# Thực hành Lab01
-
 # COURSE INTRODUCTION
 * **Course Name:** MLOps - Phát triển và vận hành hệ thống máy học.
-* **Course Code:** CS317.
 * **Class Code:** CS317.P21.
 * **Academic Year:** HK2 (2024 - 2025).
 * **Lecturer**: Th.S Đỗ Văn Tiến, Lê Trần Trọng Khiêm
+* **Subject"": Thực hành Lab01
 
 ## Training Pipeline 
 Pipeline được chia thành 4 phần: 
