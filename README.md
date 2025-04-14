@@ -140,6 +140,9 @@ cd your_path/CS317_Lab01
 
 Cài đặt các thư viện cần thiết:
 ```sh
+pip install --upgrade pip
+```
+```sh
 pip install -r requirements.txt
 ```
 5. **Mở giao diện mlflow**
