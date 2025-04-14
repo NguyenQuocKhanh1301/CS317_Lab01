@@ -51,7 +51,7 @@
 * **Class Code:** CS317.P21.
 * **Academic Year:** HK2 (2024 - 2025).
 * **Lecturer**: Th.S Đỗ Văn Tiến, Lê Trần Trọng Khiêm
-* **Subject"": Thực hành Lab01
+* **Subject**: Thực hành Lab01
 
 ## Training Pipeline 
 Pipeline được chia thành 4 phần: 
