@@ -157,7 +157,7 @@ mlflow ui --host 0.0.0.0 --port 5003
 ```
 6. **Run pipeline**
 
-Để chạy pipelin training sử dụng câu lệnh sau:
+Để chạy pipeline training sử dụng câu lệnh sau:
 ```sh
 python lab01.py
 ```
