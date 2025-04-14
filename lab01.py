@@ -109,8 +109,8 @@ def training(model, train_loader, val_loader, epochs=10, lr=0.001):
     example_output = model(example_input)
     signature = mlflow.models.infer_signature(example_input.cpu().detach().numpy(), example_output.cpu().detach().numpy())
 
-    best_model = None
     best_accuracy = 0.0
+    name_epoch = 0
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0
@@ -155,13 +155,12 @@ def training(model, train_loader, val_loader, epochs=10, lr=0.001):
             
             if accuracy_score > best_accuracy:
                 best_accuracy = accuracy_score
-                best_model = model
-                
+                name_epoch = epoch + 1
             mlflow.log_metric(f"val_accuracy_{epoch + 1}", accuracy_score, step=epoch)
             print(f"Validation Accuracy {epoch + 1}: {accuracy_score:.4f}")
             mlflow.log_metric(f"val_loss_{epoch+1}", val_loss / len(val_loader), step=epoch)
-    
-    return best_model
+    mlflow.log_metric(f"Best_Val_acc_epoch_{name_epoch}", best_accuracy)
+    return
 
 
 def evaluation(model, test_loader):
@@ -189,8 +188,7 @@ if __name__ == "__main__":
         with mlflow.start_run(run_name=f"Tune_with_lr_{lr}"):
             train_loader, val_loader, test_loader = load_data()
             model = ImageClassifier().to(device)
-            model_challenger = training(model, train_loader, val_loader, epochs=10, lr=lr)
-            evaluation(model_challenger, test_loader)
-    
+            training(model, train_loader, val_loader, epochs=10, lr=lr)
+
     
     
